@@ -8,6 +8,9 @@
         <module>pos-carts</module>
         <module>pos-discovery</module>
         <module>pos-gateway</module>
+        <module>pos-orders</module>
+        <module>pos-counter</module>
+        <module>pos-delivery</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
