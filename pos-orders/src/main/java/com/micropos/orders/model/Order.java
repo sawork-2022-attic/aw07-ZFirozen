@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Order {
 
-    private List<Item> items = new ArrayList<>();
     private int orderNo = 0;
+    private List<Item> orderItems = new ArrayList<>();
 
-    public boolean addItem(Item item) {
-        return items.add(item);
+    public boolean addOrderItem(Item item) {
+        return orderItems.add(item);
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<Item> getOrderItems() {
+        return orderItems;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setOrderItems(List<Item> items) {
+        this.orderItems = items;
     }
 
     public int getOrderNo() {

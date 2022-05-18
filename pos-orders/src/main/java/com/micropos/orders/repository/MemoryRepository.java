@@ -32,7 +32,7 @@ public class MemoryRepository implements OrderRepository {
         Order newOrder = new Order();
         double totalPrice = 0.0;
         for (Item item: items) {
-            newOrder.addItem(item);
+            newOrder.addOrderItem(item);
             // totalPrice += item.getPrice() * item.getQuantity();
         }
         // newOrder.setTotalPrice(totalPrice);

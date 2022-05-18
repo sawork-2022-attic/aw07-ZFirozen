@@ -6,6 +6,7 @@ import com.micropos.products.mapper.ProductMapper;
 import com.micropos.products.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,13 @@ public class ProductsResource implements ProductsApi {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @Override
+    @RequestMapping(value = "products/{productId}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<ProductDto> showProductById(@PathVariable String productId) {
+        ProductDto product = productMapper.toProductDto(productService.getProduct(productId));
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
 }
